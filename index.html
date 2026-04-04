@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tools by ishikur</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #fff;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #1a202c;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      color: #718096;
+      font-size: 0.95rem;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .tool-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+      padding: 1.5rem 2rem;
+      margin-bottom: 1.5rem;
+      transition: box-shadow 0.2s;
+    }
+
+    .tool-card:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+    }
+
+    .tool-card h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #1a202c;
+      margin-bottom: 0.5rem;
+    }
+
+    .tool-card p {
+      color: #4a5568;
+      line-height: 1.7;
+      margin-bottom: 1.2rem;
+    }
+
+    .tool-actions {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.55rem 1.2rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .btn:active {
+      transform: scale(0.97);
+    }
+
+    .btn-primary {
+      background: #3182ce;
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #2b6cb0;
+    }
+
+    .btn-secondary {
+      background: #edf2f7;
+      color: #4a5568;
+    }
+
+    .btn-secondary:hover {
+      background: #e2e8f0;
+    }
+
+    .btn svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #a0aec0;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.4rem;
+      }
+
+      .tool-card {
+        padding: 1.2rem 1.4rem;
+      }
+
+      .tool-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Tools</h1>
+    <p>便利なツール・拡張機能を配布しています</p>
+  </header>
+
+  <main>
+    <!-- ovice Reaction Deck -->
+    <div class="tool-card">
+      <h2>ovice Reaction Deck</h2>
+      <p>oviceでオリジナルリアクションを自由に使えるChrome拡張機能。カスタム画像をパネルに並べてワンクリックで送信できます。</p>
+      <div class="tool-actions">
+        <a href="https://github.com/ishikur/ovice-reaction-deck/releases/latest/download/ovice-reaction-deck.zip" class="btn btn-primary">
+          <svg viewBox="0 0 16 16"><path d="M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14Zm3.44-4.94L7.44 7.81a.749.749 0 0 1 1.06-.02l.01.01 1.24 1.25V1.75a.75.75 0 0 1 1.5 0v7.3l1.24-1.25a.749.749 0 1 1 1.06 1.06l-2.53 2.54a.75.75 0 0 1-.53.22h-.02a.75.75 0 0 1-.53-.22L6.19 9.06Z"/></svg>
+          ダウンロード
+        </a>
+        <a href="https://github.com/ishikur/ovice-reaction-deck" class="btn btn-secondary" target="_blank" rel="noopener">
+          <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+
+    <!-- 新しいツールを追加する場合は、上のtool-cardブロックをコピーして編集してください -->
+  </main>
+
+  <footer>
+    &copy; 2026 ishikur
+  </footer>
+</body>
+</html>
