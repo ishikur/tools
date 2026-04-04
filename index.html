@@ -47,9 +47,21 @@
       background: #fff;
       border-radius: 12px;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
-      padding: 1.5rem 2rem;
+      overflow: hidden;
       margin-bottom: 1.5rem;
       transition: box-shadow 0.2s;
+    }
+
+    .tool-card-image {
+      width: 100%;
+      aspect-ratio: 2 / 1;
+      object-fit: cover;
+      display: block;
+      background: #e2e8f0;
+    }
+
+    .tool-card-body {
+      padding: 1.5rem 2rem;
     }
 
     .tool-card:hover {
@@ -115,6 +127,104 @@
       fill: currentColor;
     }
 
+    .tool-usage {
+      margin-top: 1rem;
+    }
+
+    .tool-usage summary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #3182ce;
+      padding: 0.4rem 0;
+      list-style: none;
+      user-select: none;
+    }
+
+    .tool-usage summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .tool-usage summary::before {
+      content: "";
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-right: 2px solid #3182ce;
+      border-bottom: 2px solid #3182ce;
+      transform: rotate(-45deg);
+      transition: transform 0.2s;
+    }
+
+    .tool-usage[open] summary::before {
+      transform: rotate(45deg);
+    }
+
+    .tool-usage-content {
+      margin-top: 0.8rem;
+      padding: 1rem 1.2rem;
+      background: #f7fafc;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .tool-usage + .tool-usage {
+      margin-top: 0.5rem;
+    }
+
+    .tool-usage-content h4 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #2d3748;
+      margin-bottom: 0.5rem;
+    }
+
+    .tool-usage-content ol {
+      padding-left: 1.4rem;
+      color: #4a5568;
+      line-height: 2;
+      font-size: 0.9rem;
+    }
+
+    .tool-usage-content li {
+      margin-bottom: 0.3rem;
+    }
+
+    .tool-usage-content .note {
+      margin-top: 0.6rem;
+      padding: 0.6rem 0.8rem;
+      background: #fffbeb;
+      border: 1px solid #f6e05e;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      color: #744210;
+      line-height: 1.6;
+    }
+
+    .tool-usage-content ul {
+      padding-left: 1.4rem;
+      color: #4a5568;
+      line-height: 2;
+      font-size: 0.9rem;
+    }
+
+    .inline-icon {
+      vertical-align: middle;
+      display: inline-block;
+      margin: 0 0.1rem;
+    }
+
+    .tool-usage-content code {
+      background: #edf2f7;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      color: #2d3748;
+    }
+
     footer {
       text-align: center;
       padding: 2rem 1rem;
@@ -127,7 +237,7 @@
         font-size: 1.4rem;
       }
 
-      .tool-card {
+      .tool-card-body {
         padding: 1.2rem 1.4rem;
       }
 
@@ -150,6 +260,7 @@
   <main>
     <!-- ovice Reaction Deck -->
     <div class="tool-card">
+      <div class="tool-card-body">
       <h2>ovice Reaction Deck</h2>
       <p>oviceでオリジナルリアクションを自由に使えるChrome拡張機能。カスタム画像をパネルに並べてワンクリックで送信できます。</p>
       <div class="tool-actions">
@@ -157,10 +268,84 @@
           <svg viewBox="0 0 16 16"><path d="M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14Zm3.44-4.94L7.44 7.81a.749.749 0 0 1 1.06-.02l.01.01 1.24 1.25V1.75a.75.75 0 0 1 1.5 0v7.3l1.24-1.25a.749.749 0 1 1 1.06 1.06l-2.53 2.54a.75.75 0 0 1-.53.22h-.02a.75.75 0 0 1-.53-.22L6.19 9.06Z"/></svg>
           ダウンロード
         </a>
-        <a href="https://github.com/ishikur/ovice-reaction-deck" class="btn btn-secondary" target="_blank" rel="noopener">
-          <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
-          GitHub
-        </a>
+      </div>
+      <details class="tool-usage">
+        <summary>インストール手順</summary>
+        <div class="tool-usage-content">
+          <ol>
+            <li>上の「ダウンロード」ボタンからZIPファイルをダウンロードし、ダブルクリックして展開する</li>
+            <li>展開してできた <code>ovice-reaction-deck</code> フォルダを、デスクトップや書類フォルダなど、わかりやすい場所に移動する</li>
+            <li>Chromeの右上「︙」メニュー →「拡張機能」→「拡張機能を管理」を開く</li>
+            <li>画面右上の「デベロッパーモード」のスイッチをONにする</li>
+            <li>「パッケージ化されていない拡張機能を読み込む」をクリックし、移動した <code>ovice-reaction-deck</code> フォルダを選択する</li>
+            <li>Chromeのアドレスバーの右あたりに「う」のアイコンが表示されたら完了！</li>
+          </ol>
+          <div class="note">※ このフォルダを削除したり別の場所に移動すると拡張機能が動かなくなります。一度置いた場所から動かさないでください。</div>
+        </div>
+      </details>
+      <details class="tool-usage">
+        <summary>使い方</summary>
+        <div class="tool-usage-content">
+          <ol>
+            <li>まずChromeのアドレスバー右あたりの「う」アイコンをクリックして設定画面を開き、リアクション画像を追加する（初回は何も登録されていません）</li>
+            <li>oviceを開く</li>
+            <li>画面右下に表示される <svg class="inline-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg> ボタンをクリック</li>
+            <li>リアクションパネルが開く</li>
+            <li>好きなリアクションをクリックすると発動！</li>
+          </ol>
+        </div>
+      </details>
+      <details class="tool-usage">
+        <summary>設定・カスタマイズ</summary>
+        <div class="tool-usage-content">
+          <p style="margin-bottom:0.8rem;">Chromeのアドレスバー右あたりの「う」アイコンをクリックすると設定画面が開きます。</p>
+          <h4>リアクション画像の追加</h4>
+          <ol>
+            <li>「+ 画像を追加」ボタンをクリック</li>
+            <li>使いたい画像ファイル（PNG / GIF / WebP / JPEG）を選択</li>
+            <li>追加された画像の名前を編集できます</li>
+          </ol>
+          <h4>リアクション画像の管理</h4>
+          <ul>
+            <li>各リアクションの名前はクリックして編集可能</li>
+            <li>「A→Z」ボタンで名前順にソート</li>
+            <li>「削除」ボタンで不要なリアクションを削除</li>
+          </ul>
+          <h4>パネル設定</h4>
+          <ul>
+            <li><strong>行数・列数</strong> … パネルに表示するリアクションの並び（何行 x 何列）を調整</li>
+            <li><strong>透明度</strong> … パネルの背景の透明度を変更</li>
+            <li><strong>デフォルト音</strong> … 新しく画像を追加したときに自動で設定される効果音を選択</li>
+            <li><strong>効果音の一括変更</strong> … すべてのリアクションの効果音をまとめて変更</li>
+          </ul>
+          <h4>バックアップ</h4>
+          <ul>
+            <li><strong>エクスポート</strong> … 登録したリアクションと設定をファイルに書き出し（バックアップ用）</li>
+            <li><strong>インポート</strong> … エクスポートしたファイルから復元</li>
+          </ul>
+        </div>
+      </details>
+      <details class="tool-usage">
+        <summary>更新手順</summary>
+        <div class="tool-usage-content">
+          <ol>
+            <li>上の「ダウンロード」ボタンから新しいZIPファイルをダウンロードし、ダブルクリックして展開する</li>
+            <li>展開してできたフォルダの中身で、既存の <code>ovice-reaction-deck</code> フォルダの中身を上書きする（フォルダごと置き換えてもOK。同じ場所に置いてください）</li>
+            <li>Chromeの右上「︙」メニュー →「拡張機能」→「拡張機能を管理」を開き、ovice Reaction Deck の更新ボタン（丸い矢印）をクリック</li>
+            <li>oviceのタブをリロードすれば更新完了</li>
+          </ol>
+          <div class="note">登録済みのリアクションや設定はそのまま残ります。</div>
+        </div>
+      </details>
+      <details class="tool-usage">
+        <summary>注意事項</summary>
+        <div class="tool-usage-content">
+          <ul>
+            <li><code>ovice-reaction-deck</code> フォルダを削除・移動すると拡張機能が動かなくなります。場所を変えないでください</li>
+            <li>Chromeを更新した際に「この拡張機能は無効化されました」と表示されることがあります。その場合は拡張機能の管理画面で再度有効にしてください</li>
+          </ul>
+        </div>
+      </details>
       </div>
     </div>
 
@@ -168,7 +353,7 @@
   </main>
 
   <footer>
-    &copy; 2026 ishikur
+    &copy; 2026 maruishi
   </footer>
 </body>
 </html>
