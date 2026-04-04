@@ -19,10 +19,17 @@
     }
 
     header {
-      background: #fff;
+      background: #fff url('images/banner.jpg') no-repeat right bottom;
+      background-size: auto 100%;
       border-bottom: 1px solid #e2e8f0;
-      padding: 2rem 1rem;
-      text-align: center;
+      padding: 0;
+    }
+
+    .header-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: left;
+      padding: 2rem 1rem 2rem 1rem;
     }
 
     header h1 {
@@ -79,6 +86,21 @@
       color: #4a5568;
       line-height: 1.7;
       margin-bottom: 1.2rem;
+    }
+
+    .tool-features {
+      padding-left: 1.4rem;
+      color: #4a5568;
+      line-height: 2;
+      font-size: 0.9rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .tool-features-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #2d3748;
+      margin-bottom: 0.4rem;
     }
 
     .tool-actions {
@@ -253,8 +275,10 @@
 </head>
 <body>
   <header>
-    <h1>Tools</h1>
-    <p>便利なツール・拡張機能を配布しています</p>
+    <div class="header-inner">
+      <h1>Tools</h1>
+      <p>便利なツール・拡張機能を配布しています</p>
+    </div>
   </header>
 
   <main>
@@ -263,6 +287,20 @@
       <div class="tool-card-body">
       <h2>ovice Reaction Deck</h2>
       <p>oviceでオリジナルリアクションを自由に使えるChrome拡張機能。カスタム画像をパネルに並べてワンクリックで送信できます。</p>
+      <ul class="tool-features">
+        <li>好きな画像をリアクションとして登録できる</li>
+        <li>ovice画面上のパネルからワンクリックで送信</li>
+        <li>パネルのサイズや透明度を自由に調整</li>
+        <li>リアクションの並び順をドラッグ&ドロップで入れ替え</li>
+        <li>リアクションごとに効果音を設定可能</li>
+        <li>設定のエクスポート・インポートに対応</li>
+      </ul>
+      <p class="tool-features-label">ovice の操作を便利にする機能</p>
+      <ul class="tool-features">
+        <li>スペース入室時にリアクションパネルを自動で開く</li>
+        <li>「ブラウザでの利用を継続」ダイアログを自動で閉じる</li>
+        <li>ovice標準リアクションのGIFアニメをホバー時のみ再生</li>
+      </ul>
       <div class="tool-actions">
         <a href="https://github.com/ishikur/ovice-reaction-deck/releases/latest/download/ovice-reaction-deck.zip" class="btn btn-primary">
           <svg viewBox="0 0 16 16"><path d="M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14Zm3.44-4.94L7.44 7.81a.749.749 0 0 1 1.06-.02l.01.01 1.24 1.25V1.75a.75.75 0 0 1 1.5 0v7.3l1.24-1.25a.749.749 0 1 1 1.06 1.06l-2.53 2.54a.75.75 0 0 1-.53.22h-.02a.75.75 0 0 1-.53-.22L6.19 9.06Z"/></svg>
@@ -287,12 +325,11 @@
         <summary>使い方</summary>
         <div class="tool-usage-content">
           <ol>
-            <li>まずChromeのアドレスバー右あたりの「う」アイコンをクリックして設定画面を開き、リアクション画像を追加する（初回は何も登録されていません）</li>
-            <li>oviceを開く</li>
-            <li>画面右下に表示される <svg class="inline-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg> ボタンをクリック</li>
-            <li>リアクションパネルが開く</li>
+            <li>oviceのスペースに入る</li>
+            <li>画面右下の <svg class="inline-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg> ボタンをクリックしてリアクションパネルを開く</li>
             <li>好きなリアクションをクリックすると発動！</li>
           </ol>
+          <div class="note">初回はリアクション画像が登録されていません。下の「設定・カスタマイズ」から画像を追加してください。</div>
         </div>
       </details>
       <details class="tool-usage">
@@ -310,6 +347,7 @@
             <li>各リアクションの名前はクリックして編集可能</li>
             <li>「A→Z」ボタンで名前順にソート</li>
             <li>「削除」ボタンで不要なリアクションを削除</li>
+            <li>パネル上でドラッグ&ドロップして並び順を入れ替え</li>
           </ul>
           <h4>パネル設定</h4>
           <ul>
@@ -341,7 +379,6 @@
         <summary>注意事項</summary>
         <div class="tool-usage-content">
           <ul>
-            <li><code>ovice-reaction-deck</code> フォルダを削除・移動すると拡張機能が動かなくなります。場所を変えないでください</li>
             <li>Chromeを更新した際に「この拡張機能は無効化されました」と表示されることがあります。その場合は拡張機能の管理画面で再度有効にしてください</li>
           </ul>
         </div>
