@@ -371,11 +371,24 @@
         <div class="tool-usage-content">
           <ol>
             <li>上の「ダウンロード」ボタンから新しいZIPファイルをダウンロードし、ダブルクリックして展開する</li>
-            <li>展開してできたフォルダの中身で、既存の <code>ovice-reaction-deck</code> フォルダの中身を上書きする（フォルダごと置き換えてもOK。同じ場所に置いてください）</li>
+            <li>展開してできた新しいフォルダの中のファイルを、すでに使っている <code>ovice-reaction-deck</code> フォルダの中に上書きコピーする（フォルダ自体は新規作成せず、既存フォルダの中身だけ差し替える）</li>
             <li>Chromeの右上「︙」メニュー →「拡張機能」→「拡張機能を管理」を開き、ovice Reaction Deck の更新ボタン（丸い矢印）をクリック</li>
             <li>oviceのタブをリロードすれば更新完了</li>
           </ol>
           <div class="note">登録済みのリアクションや設定はそのまま残ります。</div>
+          <div class="note" style="background:#fff5f5;border-color:#fc8181;color:#742a2a;">
+            ⚠️ <strong>「パッケージ化されていない拡張機能を読み込む」を新しいフォルダで再度実行しないでください。</strong><br>
+            同じ拡張機能が2つインストールされた状態になり、リアクション画像や設定が新しい方に引き継がれません（ChromeはフォルダのパスでIDを管理しているため、別物として扱われます）。<br>
+            <br>
+            <strong>もし2つできてしまった場合の直し方：</strong>
+            <ol style="margin-top:0.5rem;padding-left:1.2rem;">
+              <li><code>chrome://extensions/</code> を開き、新しく追加された方の「削除」をクリック（古い方にリアクション画像や設定が残っています）</li>
+              <li>残った古い方の「ファイルパスを表示」または「フォルダを開く」で、フォルダの場所を確認</li>
+              <li>新しいZIPの中身を、そのフォルダに上書きコピー</li>
+              <li><code>chrome://extensions/</code> に戻り、ovice Reaction Deck の更新ボタン（丸い矢印）をクリック</li>
+              <li>バージョンが新しくなっていれば完了。リアクション画像や設定もそのまま残ります</li>
+            </ol>
+          </div>
         </div>
       </details>
       <details class="tool-usage">
