@@ -302,53 +302,19 @@
         <li>GIFアニメの表示切替（常時アニメーション / ホバー時のみ再生）</li>
       </ul>
       <div class="tool-actions">
-        <a href="downloads/ovice-reaction-deck.zip" class="btn btn-primary">
-          <svg viewBox="0 0 16 16"><path d="M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14Zm3.44-4.94L7.44 7.81a.749.749 0 0 1 1.06-.02l.01.01 1.24 1.25V1.75a.75.75 0 0 1 1.5 0v7.3l1.24-1.25a.749.749 0 1 1 1.06 1.06l-2.53 2.54a.75.75 0 0 1-.53.22h-.02a.75.75 0 0 1-.53-.22L6.19 9.06Z"/></svg>
-          ダウンロード
+        <a href="https://chromewebstore.google.com/detail/ovice-reaction-deck/nbaoplkoflemalgjgfdfkpddnnjhnefj" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          Chrome ウェブストアで入手
         </a>
       </div>
       <details class="tool-usage">
-        <summary>インストール手順（初回のみ）</summary>
-        <div class="tool-usage-content">
-          <div class="note" style="margin-bottom: 1rem;">
-            📌 <strong>この手順は初めてインストールする時だけ実行してください。</strong><br>
-            すでにインストール済みでバージョンアップする場合は、下の「<strong>バージョンアップ手順</strong>」を見てください。<br>
-            この手順を繰り返すと、同じ拡張機能が2つできてしまい、リアクション画像や設定が引き継がれなくなります。
-          </div>
-          <ol>
-            <li>上の「ダウンロード」ボタンからZIPファイルをダウンロードし、ダブルクリックして展開する</li>
-            <li>展開してできた <code>ovice-reaction-deck</code> フォルダを、デスクトップや書類フォルダなど、わかりやすい場所に移動する</li>
-            <li>Chromeの右上「︙」メニュー →「拡張機能」→「拡張機能を管理」を開く</li>
-            <li>画面右上の「デベロッパーモード」のスイッチをONにする</li>
-            <li>「パッケージ化されていない拡張機能を読み込む」をクリックし、移動した <code>ovice-reaction-deck</code> フォルダを選択する</li>
-            <li>Chromeのアドレスバーの右あたりに「う」のアイコンが表示されたら完了！</li>
-          </ol>
-          <div class="note">※ このフォルダを削除したり別の場所に移動すると拡張機能が動かなくなります。一度置いた場所から動かさないでください。</div>
-        </div>
-      </details>
-      <details class="tool-usage">
-        <summary>バージョンアップ手順（2回目以降）</summary>
+        <summary>インストール・更新について</summary>
         <div class="tool-usage-content">
           <ol>
-            <li>上の「ダウンロード」ボタンから新しいZIPファイルをダウンロードし、ダブルクリックして展開する</li>
-            <li>展開してできた新しいフォルダの中のファイルを、すでに使っている <code>ovice-reaction-deck</code> フォルダの中に上書きコピーする（フォルダ自体は新規作成せず、既存フォルダの中身だけ差し替える）</li>
-            <li>Chromeの右上「︙」メニュー →「拡張機能」→「拡張機能を管理」を開き、ovice Reaction Deck の更新ボタン（丸い矢印）をクリック</li>
-            <li>oviceのタブをリロードすれば更新完了</li>
+            <li>上の「Chrome ウェブストアで入手」ボタンをクリックする</li>
+            <li>Chrome ウェブストアで「Chromeに追加」をクリックする</li>
+            <li>追加後はChrome ウェブストアを通じて自動的に最新版へ更新されます</li>
           </ol>
-          <div class="note">登録済みのリアクションや設定はそのまま残ります。</div>
-          <div class="note" style="background:#fff5f5;border-color:#fc8181;color:#742a2a;">
-            ⚠️ <strong>「パッケージ化されていない拡張機能を読み込む」を新しいフォルダで再度実行しないでください。</strong><br>
-            同じ拡張機能が2つインストールされた状態になり、リアクション画像や設定が新しい方に引き継がれません（ChromeはフォルダのパスでIDを管理しているため、別物として扱われます）。<br>
-            <br>
-            <strong>もし2つできてしまった場合の直し方：</strong>
-            <ol style="margin-top:0.5rem;padding-left:1.2rem;">
-              <li><code>chrome://extensions/</code> を開き、新しく追加された方の「削除」をクリック（古い方にリアクション画像や設定が残っています）</li>
-              <li>残った古い方の「ファイルパスを表示」または「フォルダを開く」で、フォルダの場所を確認</li>
-              <li>新しいZIPの中身を、そのフォルダに上書きコピー</li>
-              <li><code>chrome://extensions/</code> に戻り、ovice Reaction Deck の更新ボタン（丸い矢印）をクリック</li>
-              <li>バージョンが新しくなっていれば完了。リアクション画像や設定もそのまま残ります</li>
-            </ol>
-          </div>
+          <div class="note">手動インストール用ZIPの配布は終了しました。登録済みのリアクションや設定は、バックアップをエクスポートしてからウェブストア版へ移行できます。</div>
         </div>
       </details>
       <details class="tool-usage">
@@ -408,6 +374,12 @@
         <summary>更新履歴</summary>
         <div class="tool-usage-content">
           <dl style="margin:0;line-height:1.4;font-size:0.9rem;">
+            <dt><strong>v2.0.2</strong>（2026-08-04）</dt>
+            <dd style="margin:0 0 1rem 1rem;">
+              <ul style="margin:0.3rem 0;padding-left:1.2rem;line-height:1.6;">
+                <li style="margin:0;">oviceを開いたままバックアップをインポートしたとき、リアクションの配置が崩れる問題を修正しました</li>
+              </ul>
+            </dd>
             <dt><strong>v2.0.1</strong>（2026-08-03）</dt>
             <dd style="margin:0 0 1rem 1rem;">
               <ul style="margin:0.3rem 0;padding-left:1.2rem;line-height:1.6;">
